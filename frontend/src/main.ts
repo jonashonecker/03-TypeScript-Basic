@@ -1,6 +1,6 @@
 // Step 1: Declare a variable named 'age' of type 'number' and assign a value to it.
 let age: number = 30;
-let number:number = 44;
+let number: number = 44;
 
 // Step 2: Write a 'for' loop that outputs the numbers from 1 to 'age'.
 let array: Array<number> = [];
@@ -52,11 +52,11 @@ if (username) {
 }
 
 // Step 10: Declare a variable named 'isAdmin' of type 'boolean' and assign it the value 'false'.
-let isAdmin:boolean = false;
+let isAdmin: boolean = false;
 
 // Step 11: Use an 'if-else' statement to check if 'isAdmin' is evaluated as a 'truthy' value.
 // Display 'isAdmin is evaluated as truthy.' if 'isAdmin' is considered 'truthy'.
-if(isAdmin) {
+if (isAdmin) {
     console.log("isAdmin is evaluated as truthy.");
 } else {
     console.log("isAdmin is evaluated as falsy.");
@@ -64,6 +64,32 @@ if(isAdmin) {
 
 // Step 12: Use an 'if' statement to check if 'isAdmin' is 'false'.
 // Display 'isAdmin is false.' if 'isAdmin' has the value 'false'.
-if(isAdmin === false) {
+if (isAdmin === false) {
     console.log("isAdmin is false");
+}
+
+// Bonus
+printTree(9);
+
+function printTree(lineNumbers: number): void {
+    const maxLines: number = 10;
+    let numberOfCharacters: number = 1;
+    let numberOfWhitespaces: number = lineNumbers - 1;
+    let i:number = 0;
+
+    if (lineNumbers > maxLines) {
+        console.log("Sorry, that wouldn't fit in any living room!")
+        return;
+    }
+
+    do {
+        if (i < lineNumbers) {
+            console.log(" ".repeat(numberOfWhitespaces) + "*".repeat(numberOfCharacters))
+            numberOfCharacters += 2;
+            numberOfWhitespaces -= 1;
+        } else {
+            console.log(" ".repeat(lineNumbers - 1) + "*");
+        }
+        i++;
+    } while (i < maxLines)
 }
